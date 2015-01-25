@@ -23,6 +23,7 @@ public class CustomerRepository implements ICustomerRepository{
 		String sql = "SELECT * FROM videoshopdb.customer";
 		SQLQuery query = session.createSQLQuery(sql);
 		query.addEntity(Customer.class);		
+		@SuppressWarnings("rawtypes")
 		List results= query.list();
 		
 		for(int i=0; i<results.size();i++){
@@ -34,7 +35,6 @@ public class CustomerRepository implements ICustomerRepository{
 
 	@Override
 	public Customer GetCustomerByName(String customerName) {
-		// TODO Auto-generated method stub
 		Customer customer = new Customer();
 		
 		String sql = "SELECT id, name, surname "
@@ -42,6 +42,7 @@ public class CustomerRepository implements ICustomerRepository{
 				+ "WHERE name=" + "'" + customerName + "'";
 		SQLQuery query = session.createSQLQuery(sql);
 		query.addEntity(Customer.class);
+		@SuppressWarnings("rawtypes")
 		List results = query.list();		
 		customer = (Customer)results.get(0);
 		return customer;
@@ -64,14 +65,5 @@ public class CustomerRepository implements ICustomerRepository{
 			return false;
 		else
 			return true;
-	}
-	
-	
-
-	//saves all changes to db
-	/*
-	public void Save() {
-		session.getTransaction().commit();
-	}*/
-	
+	}	
 }

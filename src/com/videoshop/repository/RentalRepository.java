@@ -6,7 +6,6 @@ import java.util.List;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 
-import com.videoshop.model.Customer;
 import com.videoshop.model.Rental;
 
 public class RentalRepository implements IRentalRepository{
@@ -57,7 +56,6 @@ public class RentalRepository implements IRentalRepository{
 
 	@Override
 	public boolean DeleteRental(Rental rental) {
-		// TODO Auto-generated method stub
 		Rental willDeleted = this.GetRentalById(rental.getId());
 		session.delete(willDeleted);
 		if(willDeleted.getId() < 0)

@@ -36,7 +36,6 @@ public class MovieRepository implements IMovieRepository{
 
 	@Override
 	public Movie GetMovieByTitle(String movieTitle) {
-		// TODO Auto-generated method stub
 		Movie movie = new Movie();
 		
 		String sql = "SELECT id, title, price "
@@ -69,11 +68,4 @@ public class MovieRepository implements IMovieRepository{
 		else
 			return true;
 	}
-
-	//saves all changes to db
-	/*
-	public void Save() {
-		session.getTransaction().commit();
-	}*/
-	
 }

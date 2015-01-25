@@ -2,7 +2,6 @@ package com.videoshop.repository;
 
 import java.util.List;
 
-import com.videoshop.model.Customer;
 import com.videoshop.model.Movie;
 
 public interface IMovieRepository {
