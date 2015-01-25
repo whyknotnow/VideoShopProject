@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.videoshop">
+    <class name="Customer" table="videoshopdb.customer">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="name" type="string" column="name"/>
+        <property name="surname" type="string" column="surname" />
+        <set name="rentals" table="videoshopdb.rental" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="customer_id" not-null="true" />
+            </key>
+            <one-to-many class="com.videoshop.Rental" />
+        </set>
+    </class>
+</hibernate-mapping>

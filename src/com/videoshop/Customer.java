@@ -1,9 +1,19 @@
 package com.videoshop;
 
-public class Customer {
+import java.util.HashSet;
+import java.util.Set;
+
+public class Customer implements java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private int id;
 	private String name;
 	private String surname;
+	private Set<Rental> rentals = 
+			new HashSet<Rental>(0);
 	
 	public Customer(){}
 	
@@ -35,6 +45,14 @@ public class Customer {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Set<Rental> getRentals() {
+		return rentals;
+	}
+
+	public void setRentals(Set<Rental> rentals) {
+		this.rentals = rentals;
 	}
 	
 	
