@@ -11,11 +11,10 @@ import com.videoshop.model.Customer;
 public class CustomerRepository implements ICustomerRepository{
 
 	Session session = SingletonSession.getSession();
-	
 	//this method begins the transaction for get, set, delete, update,...
 	//this method should call only once.
-	public void BeginTransaction(){
-		session.beginTransaction();
+	public void beginTransaction() {
+		session.beginTransaction();		
 	}
 	
 	@Override
@@ -29,8 +28,7 @@ public class CustomerRepository implements ICustomerRepository{
 		for(int i=0; i<results.size();i++){
 			Customer customer = (Customer)results.get(i);
 			customers.add(customer);
-		}
-		
+		};
 		return customers;
 	}
 
@@ -46,7 +44,6 @@ public class CustomerRepository implements ICustomerRepository{
 		query.addEntity(Customer.class);
 		List results = query.list();		
 		customer = (Customer)results.get(0);
-		
 		return customer;
 	}
 
@@ -63,17 +60,18 @@ public class CustomerRepository implements ICustomerRepository{
 	public boolean DeleteCustomer(Customer customer) {
 		Customer willDeleted = this.GetCustomerByName(customer.getName());
 		session.delete(willDeleted);
-		
 		if(willDeleted.getName().isEmpty())
 			return false;
 		else
 			return true;
 	}
+	
+	
 
 	//saves all changes to db
-	@Override
+	/*
 	public void Save() {
 		session.getTransaction().commit();
-	}
+	}*/
 	
 }

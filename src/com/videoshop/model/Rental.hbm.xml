@@ -10,7 +10,9 @@
         <many-to-one name="customer" class="com.videoshop.model.Customer" fetch="select">
             <column name="customer_id" not-null="true" />
         </many-to-one>
-        <property name="movie_id"  column="movie_id" />
+        <many-to-one name="movie" class="com.videoshop.model.Movie" fetch="select">
+            <column name="movie_id" not-null="true" />
+        </many-to-one>
         <property name="days_rent" column="days_rent" />
         <property name="total_price" column="total_price" />
     </class>

@@ -12,6 +12,7 @@ public class Rental implements java.io.Serializable{
 	private int days_rent;
 	private double total_price;
 	private Customer customer;
+	private Movie movie;
 	
 	public Rental(){}
 	
@@ -61,6 +62,14 @@ public class Rental implements java.io.Serializable{
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public Movie getMovie() {
+		return movie;
+	}
+
+	public void setMovie(Movie movie) {
+		this.movie = movie;
 	}
 
 }

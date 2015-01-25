@@ -8,58 +8,61 @@ import org.junit.AfterClass;
 import org.junit.Test;
 
 import com.videoshop.model.Customer;
+import com.videoshop.model.Movie;
 import com.videoshop.repository.CustomerRepository;
+import com.videoshop.repository.MovieRepository;
 import com.videoshop.repository.SingletonSession;
 
-public class CustomerRepositoryTest {
+public class MovieRepositoryTest {
 	
-	CustomerRepository cRep = new CustomerRepository();	
+	MovieRepository mRep = new MovieRepository();	
+	
 	@Test
-	public void testGetAllCustomers(){		
+	public void testGetAllMovies(){		
 	//****** SET UP *****
-		cRep.beginTransaction();
+		mRep.beginTransaction();
 	//***** EXECUTE SUT *****
-		List<Customer> customers = cRep.GetAllCustomers();
+		List<Movie> movies = mRep.GetAllMovies();
 		
 	//***** VERIFY OUTPUT *****
-		assertFalse(customers.isEmpty());
+		assertFalse(movies.isEmpty());
 	}
 	
 	@Test
-	public void testGetCustomerByName(){
+	public void testGetMovieByTitle(){
 		
 	//***** SET UP *****
-		Customer expectedCustomer = new Customer(1,"Caglar","Akbulut");
+		Movie expectedMovie = new Movie(1,"The Green Mile",5.99);
 		
 	//***** EXECUTE SUT *****
-		Customer actualCustomer = cRep.GetCustomerByName("Caglar");
+		Movie actualMovie = mRep.GetMovieByTitle("The Green Mile");
 		
 	//***** VERIFY OUTPUT *****
-		assertEquals(expectedCustomer, actualCustomer);
+		assertEquals(expectedMovie, actualMovie);
 	}
 	
 	@Test
-	public void testInsertCustomer(){
+	public void testInsertMovie(){
 		
 	//***** SET UP *****
-		Customer cust = new Customer("Osman","Ercelik");
+		Movie movie = new Movie("Undisputed", 7.99);
 		boolean value = false;
 		
 	//***** EXECUTE SUT *****
-		value = cRep.InsertCustomer(cust);
+		value = mRep.InsertMovie(movie);
 		
 	//***** VERIFY OUTPUT *****
 		assertTrue(value);
 	}
 	
 	@Test
-	public void testDeleteCustomer(){
+	public void testDeleteMovie(){
 		
 		//***** SET UP *****
-			Customer cust = new Customer("Osman","Ercelik");
+			Movie movie = new Movie("The Green Mile", 7.99);
 			boolean value = false;
 		//***** EXECUTE SUT *****
-			value = cRep.DeleteCustomer(cust);
+			value = mRep.DeleteMovie(movie);
 			
 		//***** VERIFY OUTPUT *****
 			assertTrue(value);

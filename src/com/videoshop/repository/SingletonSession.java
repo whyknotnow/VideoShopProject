@@ -18,12 +18,21 @@ public class SingletonSession {
 			registry.build());
 			
 	//opens a new session from the session factory (dbcontext)
-	private static Session session = sessionFactory.openSession();
+	private static Session session = sessionFactory.openSession();	
 	
-	private SingletonSession(){}
+	private SingletonSession(){
+	}
 	
-	public static Session getSession(){
+	public static Session getSession(){		
 		return session;
+	}
+	
+	public static void End(){
+		session.close();
+	}	
+	
+	public static void save(){
+		session.getTransaction().commit();
 	}
 	
 	

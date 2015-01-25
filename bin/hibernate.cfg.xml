@@ -15,5 +15,6 @@
        
     <mapping resource="com/videoshop/model/Customer.hbm.xml" />
     <mapping resource="com/videoshop/model/Rental.hbm.xml" />
+    <mapping resource="com/videoshop/model/Movie.hbm.xml" />
   </session-factory>
 </hibernate-configuration>

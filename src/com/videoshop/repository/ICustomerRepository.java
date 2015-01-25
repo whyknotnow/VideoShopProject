@@ -9,5 +9,5 @@ public interface ICustomerRepository {
 	Customer GetCustomerByName(String customerName);
 	boolean InsertCustomer(Customer customer);
 	boolean DeleteCustomer(Customer customer);
-	void Save();
+	//void Save();
 }
