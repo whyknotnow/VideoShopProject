@@ -8,7 +8,7 @@ import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.videoshop.Movie;
+import com.videoshop.model.Movie;
 
 public class MovieTest {
 	
@@ -22,7 +22,7 @@ public class MovieTest {
 	public void testGetTitle() {	
 		
 	//***** SET UP *****
-		final Movie movie = context.mock(com.videoshop.Movie.class);
+		final Movie movie = context.mock(com.videoshop.model.Movie.class);
 		String expectedTitle = "The Green Mile";
 		String actualTitle = "";
 		
@@ -40,7 +40,7 @@ public class MovieTest {
 	public void testGetPrice() {			
 		
 	//***** SET UP *****
-		final Movie movie = context.mock(com.videoshop.Movie.class);
+		final Movie movie = context.mock(com.videoshop.model.Movie.class);
 		//Movie movie = new Movie(2, "The Chosen One", 7.99);	
 		double expectedPrice = 7.99;
 		double actualPrice = 0.0;

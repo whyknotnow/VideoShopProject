@@ -8,7 +8,7 @@ import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.Rule;
 import org.junit.Test;
 
-import com.videoshop.Customer;
+import com.videoshop.model.Customer;
 
 public class CustomerTest {
 	
@@ -21,7 +21,7 @@ public class CustomerTest {
 	public void testGetName() {
 		
 	//***** SET UP *****
-		final Customer customer = context.mock(com.videoshop.Customer.class);
+		final Customer customer = context.mock(com.videoshop.model.Customer.class);
 		//Customer customer = new Customer(1, "Caglar", "Akbulut");	
 		String expectedName = "Caglar";
 		String actualName = "";
@@ -41,7 +41,7 @@ public class CustomerTest {
 	public void testGetSurname() {
 	
 	//***** SET UP *****
-		final Customer customer = context.mock(com.videoshop.Customer.class);
+		final Customer customer = context.mock(com.videoshop.model.Customer.class);
 		//Customer customer = new Customer(1, "Caglar", "Akbulut");	
 		String expectedSurname = "Akbulut";
 		String actualSurname = "";

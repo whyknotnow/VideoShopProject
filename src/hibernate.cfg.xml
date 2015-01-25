@@ -13,7 +13,7 @@
     
     <property name="show_sql">true</property>   
        
-    <mapping resource="com/videoshop/Customer.hbm.xml" />
-    <mapping resource="com/videoshop/Rental.hbm.xml" />
+    <mapping resource="com/videoshop/model/Customer.hbm.xml" />
+    <mapping resource="com/videoshop/model/Rental.hbm.xml" />
   </session-factory>
 </hibernate-configuration>
