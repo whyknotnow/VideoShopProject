@@ -14,9 +14,9 @@ public class MovieRepository implements IMovieRepository{
 	Session session = SingletonSession.getSession();
 	//this method begins the transaction for get, set, delete, update,...
 	//this method should call only once.
-		public void beginTransaction() {
-			session.beginTransaction();		
-		}
+	public void beginTransaction() {
+		session.beginTransaction();		
+	}
 	
 	@Override
 	public List<Movie> GetAllMovies() {

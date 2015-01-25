@@ -67,6 +67,8 @@ public class CustomerRepositoryTest {
 	
 	@AfterClass
 	public static void cleanUp(){
+		//This method destroys singleton context object, so other test classes can create 
+		//and use context(session) object again.
 		SingletonSession.End();
 	}
 }

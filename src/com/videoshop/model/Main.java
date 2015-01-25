@@ -24,16 +24,23 @@ public class Main {
 		customer.setName("Caglar");
 		customer.setSurname("Akbulut");
 		
+		Movie movie = new Movie();
+		movie.setId(1);
+		movie.setTitle("The Green Mile");
+		movie.setPrice(5.99);
+		
 		Rental rental = new Rental();
 		rental.setId(1);
-		rental.setMovie_id(1);
 		rental.setTotal_price(3.3);
 		rental.setDays_rent(1);
 		
 		rental.setCustomer(customer);
+		rental.setMovie(movie);
 		customer.getRentals().add(rental);
+		movie.getRentals().add(rental);
 		
 		session.save(customer);
+		session.save(movie);
 		session.save(rental);
 		
 		session.getTransaction().commit();

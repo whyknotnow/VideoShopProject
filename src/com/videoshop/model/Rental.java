@@ -8,7 +8,6 @@ public class Rental implements java.io.Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private int id;
-	private int movie_id;
 	private int days_rent;
 	private double total_price;
 	private Customer customer;
@@ -16,17 +15,15 @@ public class Rental implements java.io.Serializable{
 	
 	public Rental(){}
 	
-	public Rental(int _id, int _movie_id,
+	public Rental(int _id,
 			int _days_rent, double _total_price){
 		this.id=_id;
-		this.movie_id=_movie_id;
 		this.days_rent=_days_rent;
 		this.total_price=_total_price;
 	}
 	
-	public Rental(int _movie_id,
+	public Rental(
 			int _days_rent, double _total_price){
-		this.movie_id=_movie_id;
 		this.days_rent=_days_rent;
 		this.total_price=_total_price;
 	}
@@ -36,12 +33,6 @@ public class Rental implements java.io.Serializable{
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public int getMovie_id() {
-		return movie_id;
-	}
-	public void setMovie_id(int movie_id) {
-		this.movie_id = movie_id;
 	}
 	public int getDays_rent() {
 		return days_rent;
@@ -72,4 +63,18 @@ public class Rental implements java.io.Serializable{
 		this.movie = movie;
 	}
 
+	public boolean equals(Object obj){
+		if(!(obj instanceof Rental))
+			return false;
+		if(obj==this)
+			return true;
+		
+		Rental rental = (Rental) obj;
+		
+		if(rental.getId()==this.id)
+			return true;
+		else
+			return false;
+	}
+	
 }

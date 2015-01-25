@@ -24,7 +24,14 @@ public class SingletonSession {
 	}
 	
 	public static Session getSession(){		
-		return session;
+		if(session.isOpen())
+			return session;
+		else{
+			session = sessionFactory.openSession();
+			return session;
+		}
+			
+		
 	}
 	
 	public static void End(){

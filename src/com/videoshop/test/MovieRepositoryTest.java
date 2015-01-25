@@ -32,10 +32,10 @@ public class MovieRepositoryTest {
 	public void testGetMovieByTitle(){
 		
 	//***** SET UP *****
-		Movie expectedMovie = new Movie(1,"The Green Mile",5.99);
+		Movie expectedMovie = new Movie(2,"Men in Black",5.99);
 		
 	//***** EXECUTE SUT *****
-		Movie actualMovie = mRep.GetMovieByTitle("The Green Mile");
+		Movie actualMovie = mRep.GetMovieByTitle("Men in Black");
 		
 	//***** VERIFY OUTPUT *****
 		assertEquals(expectedMovie, actualMovie);
@@ -59,7 +59,7 @@ public class MovieRepositoryTest {
 	public void testDeleteMovie(){
 		
 		//***** SET UP *****
-			Movie movie = new Movie("The Green Mile", 7.99);
+			Movie movie = new Movie("Men in Black", 7.99);
 			boolean value = false;
 		//***** EXECUTE SUT *****
 			value = mRep.DeleteMovie(movie);
@@ -70,6 +70,8 @@ public class MovieRepositoryTest {
 	
 	@AfterClass
 	public static void cleanUp(){
+		//This method destroys singleton context object, so other test classes can create 
+		//and use context(session) object again.
 		SingletonSession.End();
 	}
 }
